@@ -1,4 +1,4 @@
-local json = require "json"
+local json = require "rxi-json-lua"
 local storage = {}
 
 function storage:load(file, global)
