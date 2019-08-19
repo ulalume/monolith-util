@@ -23,6 +23,10 @@ function math2.clamp(value, min, max)
     return value
 end
 
+function math2.lerp(a, b, ratio)
+  return (a * ratio) + b * (1.0 - ratio)
+end
+
 function math2.map(value, srcMin, srcMax, dstMin, dstMax)
     return dstMin + (dstMax - dstMin) * ((value - srcMin) / (srcMax - srcMin))
 end
