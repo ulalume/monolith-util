@@ -70,6 +70,10 @@ function math2.dotProduct(p0x, p0y, p1x, p1y)
     return p0x * p1x + p0y * p1y
 end
 
+function math2.isNaN(_v)
+    return _v ~= _v
+end
+
 function math2.reflectPoint(
         p0x, p0y, p1x, p1y,
         p2x, p2y, p3x, p3y)
@@ -84,12 +88,12 @@ function math2.reflectPoint(
 
     -- cal two lines angle
     local aa = {
-        x = cx - p0x,
-        y = cy - p0y,
+        x = p1x - p0x,
+        y = p1y - p0y,
     }
     local bb = {
-        x = cx - p2x,
-        y = cy - p2y,
+        x = p3x - p2x,
+        y = p3y - p2y,
     }
     local rad = math.acos(
         math2.dotProduct(aa.x, aa.y, bb.x, bb.y)
